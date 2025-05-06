@@ -213,108 +213,108 @@ export default function LearningProgressPosts() {
     entry.likes && entry.likes.some((like) => like.userId === user?.id);
 
   return (
-    <div className="learning-progress-page">
-      <header className="page-header">
-        <button className="back-button" onClick={() => navigate("/dashboard")}>
+    <div className="learning-progress-page-b">
+      <header className="page-header-b">
+        <button className="back-button-b" onClick={() => navigate("/dashboard")}>
           ← Back to Dashboard
         </button>
         <h1>Learning Progress</h1>
       </header>
 
-      <div className="progress-create-section">
+      <div className="progress-create-section-b">
         <h2>Share Your Progress</h2>
-        <form onSubmit={handleProgressSubmit} className="progress-form">
-          <div className="form-group">
+        <form onSubmit={handleProgressSubmit} className="progress-form-b">
+          <div className="form-group-b">
             <input
               type="text"
               name="title"
               placeholder="Progress Title"
               value={newProgressEntry.title}
               onChange={handleInputChange}
-              className="progress-input"
+              className="progress-input-b"
               required
             />
           </div>
-          <div className="form-group">
+          <div className="form-group-b">
             <textarea
               name="description"
               placeholder="What have you learned?"
               value={newProgressEntry.description}
               onChange={handleInputChange}
-              className="progress-textarea"
+              className="progress-textarea-b"
               required
             />
           </div>
-          <button type="submit" className="progress-button">
+          <button type="submit" className="progress-button-b">
             Share
           </button>
         </form>
       </div>
 
-      {error && <div className="error-message">{error}</div>}
+      {error && <div className="error-message-b">{error}</div>}
 
-      <div className="progress-entries-section">
+      <div className="progress-entries-section-b">
         <h2>Community Updates</h2>
-        {loading && <div className="loading-spinner">Loading...</div>}
+        {loading && <div className="loading-spinner-b">Loading...</div>}
         {progressEntries.length === 0 && !loading ? (
-          <div className="no-entries">
+          <div className="no-entries-b">
             No progress entries yet. Start sharing!
           </div>
         ) : (
-          <div className="progress-entries-grid">
+          <div className="progress-entries-grid-b">
             {progressEntries.map((entry) => (
-              <div key={entry.id} className="progress-card">
-                <div className="progress-header">
+              <div key={entry.id} className="progress-card-b">
+                <div className="progress-header-b">
                   <img
                     src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
                     alt="Profile"
-                    className="progress-user-icon"
+                    className="progress-user-icon-b"
                   />
-                  <div className="progress-user-info">
-                    <span className="progress-username">{entry.userName}</span>
-                    <span className="progress-time">
+                  <div className="progress-user-info-b">
+                    <span className="progress-username-b">{entry.userName}</span>
+                    <span className="progress-time-b">
                       {new Date(entry.createdAt).toLocaleDateString()}
                     </span>
                   </div>
                 </div>
-                <h3 className="progress-title">{entry.title}</h3>
-                <p className="progress-content">{entry.description}</p>
+                <h3 className="progress-title-b">{entry.title}</h3>
+                <p className="progress-content-b">{entry.description}</p>
                 {entry.skillArea && (
-                  <div className="progress-detail">
+                  <div className="progress-detail-b">
                     <strong>Skill:</strong> {entry.skillArea}
                   </div>
                 )}
                 {entry.learningResources && (
-                  <div className="progress-detail">
+                  <div className="progress-detail-b">
                     <strong>Resources:</strong> {entry.learningResources}
                   </div>
                 )}
                 {entry.challengesFaced && (
-                  <div className="progress-detail">
+                  <div className="progress-detail-b">
                     <strong>Challenges:</strong> {entry.challengesFaced}
                   </div>
                 )}
                 {entry.nextSteps && (
-                  <div className="progress-detail">
+                  <div className="progress-detail-b">
                     <strong>Next:</strong> {entry.nextSteps}
                   </div>
                 )}
-                <div className="progress-actions">
+                <div className="progress-actions-b">
                   <button
-                    className={`like-button ${
+                    className={`like-button-b ${
                       isEntryLikedByUser(entry) ? "liked" : ""
                     }`}
                     onClick={() => handleLike(entry.id)}
                   >
-                    <span className="like-icon">
+                    <span className="like-icon-b">
                       {isEntryLikedByUser(entry) ? "❤️" : "🤍"}
                     </span>
                     <span>{entry.likes?.length || 0}</span>
                   </button>
                 </div>
-                <div className="comments-section">
+                <div className="comments-section-b">
                   <h4>Comments ({entry.comments?.length || 0})</h4>
-                  <div className="add-comment">
+                  <div className="add-comment-b">
                     <input
                       type="text"
                       placeholder="Add a comment..."
@@ -322,34 +322,34 @@ export default function LearningProgressPosts() {
                       onChange={(e) =>
                         handleCommentChange(entry.id, e.target.value)
                       }
-                      className="comment-input"
+                      className="comment-input-b"
                     />
                     <button
-                      className="comment-button"
+                      className="comment-button-b"
                       onClick={() => handleAddComment(entry.id)}
                     >
                       Comment
                     </button>
                   </div>
-                  <div className="comments-list">
+                  <div className="comments-list-b">
                     {entry.comments &&
                       entry.comments.map((comment) => (
-                        <div key={comment.id} className="comment-item">
+                        <div key={comment.id} className="comment-item-b">
                           {editingComment &&
                           editingComment.entryId === entry.id &&
                           editingComment.commentId === comment.id ? (
-                            <div className="edit-comment">
+                            <div className="edit-comment-b">
                               <textarea
                                 value={editCommentContent}
                                 onChange={(e) =>
                                   setEditCommentContent(e.target.value)
                                 }
-                                className="edit-comment-textarea"
+                                className="edit-comment-textarea-b"
                                 placeholder="Edit your comment..."
                               />
-                              <div className="edit-comment-actions">
+                              <div className="edit-comment-actions-b">
                                 <button
-                                  className="save-comment"
+                                  className="save-comment-b"
                                   onClick={() =>
                                     handleUpdateComment(entry.id, comment.id)
                                   }
@@ -358,7 +358,7 @@ export default function LearningProgressPosts() {
                                   <Save size={16} />
                                 </button>
                                 <button
-                                  className="cancel-comment"
+                                  className="cancel-comment-b"
                                   onClick={cancelEditingComment}
                                   aria-label="Cancel editing"
                                 >
@@ -368,16 +368,16 @@ export default function LearningProgressPosts() {
                             </div>
                           ) : (
                             <>
-                              <p className="comment-author">
+                              <p className="comment-author-b">
                                 {comment.userName}:{" "}
-                                <span className="comment-content">
+                                <span className="comment-content-b">
                                   {comment.content}
                                 </span>
                               </p>
                               {comment.userId === user?.id && (
-                                <div className="comment-actions">
+                                <div className="comment-actions-b">
                                   <button
-                                    className="delete-comment"
+                                    className="delete-comment-b"
                                     onClick={() =>
                                       handleDeleteComment(entry.id, comment.id)
                                     }
@@ -386,7 +386,7 @@ export default function LearningProgressPosts() {
                                     <Trash size={16} />
                                   </button>
                                   <button
-                                    className="update-comment"
+                                    className="update-comment-b"
                                     onClick={() =>
                                       startEditingComment(
                                         entry.id,
