@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+
 @RestController
 @RequestMapping("/api/learning-plan")
 @CrossOrigin(origins = "*")
@@ -20,6 +21,7 @@ public class LearningPlanController {
     @Autowired
     private LearningPlanService learningPlanService;
 
+    
     // Create a learning plan for a specific user
     @PostMapping("/user/{userId}")
     public ResponseEntity<LearningPlan> createLearningPlanForUser(
@@ -30,6 +32,7 @@ public class LearningPlanController {
         return new ResponseEntity<>(created, HttpStatus.CREATED);
     }
 
+    
     // Get all learning plans
     @GetMapping
     public ResponseEntity<List<LearningPlan>> getAllLearningPlans() {
@@ -37,6 +40,7 @@ public class LearningPlanController {
         return new ResponseEntity<>(plans, HttpStatus.OK);
     }
 
+    
     // Get a learning plan by ID
     @GetMapping("/{id}")
     public ResponseEntity<LearningPlan> getLearningPlanById(@PathVariable String id) {
@@ -44,6 +48,7 @@ public class LearningPlanController {
         return new ResponseEntity<>(plan, HttpStatus.OK);
     }
 
+    
     // Get learning plans by user ID
     @GetMapping("/user/{userId}")
     public ResponseEntity<List<LearningPlan>> getLearningPlansByUserId(@PathVariable String userId) {
@@ -51,6 +56,7 @@ public class LearningPlanController {
         return new ResponseEntity<>(plans, HttpStatus.OK);
     }
 
+    
     // Update a learning plan
     @PutMapping("/{id}")
     public ResponseEntity<LearningPlan> updateLearningPlan(
@@ -60,6 +66,7 @@ public class LearningPlanController {
         return new ResponseEntity<>(updated, HttpStatus.OK);
     }
 
+    
     // Delete a learning plan
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteLearningPlan(@PathVariable String id) {
@@ -67,6 +74,7 @@ public class LearningPlanController {
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
+    
     // Add a comment to a learning plan
     @PostMapping("/{planId}/comments")
     public ResponseEntity<LearningPlan> addComment(
@@ -76,6 +84,7 @@ public class LearningPlanController {
         return new ResponseEntity<>(updated, HttpStatus.CREATED);
     }
 
+    
     // Update a comment
     @PutMapping("/{planId}/comments/{commentId}")
     public ResponseEntity<LearningPlan> updateComment(
@@ -105,6 +114,7 @@ public class LearningPlanController {
         return new ResponseEntity<>(updated, HttpStatus.CREATED);
     }
 
+    
     // Remove a like from a learning plan
     @DeleteMapping("/{planId}/likes/{userId}")
     public ResponseEntity<LearningPlan> removeLike(
