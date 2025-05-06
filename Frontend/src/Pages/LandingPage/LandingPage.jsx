@@ -9,7 +9,6 @@ export default function LandingPage() {
   const handleNavigateLogin = () => {
     navigate("/login");
   };
-
   return (
     <div className="landing-page">
       {/* Navbar */}
