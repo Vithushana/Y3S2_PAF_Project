@@ -4,7 +4,6 @@
   box-sizing: border-box;
   font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
 }
-
 .landing-page {
   min-height: 100vh;
   background-color: #f0f4f8; /* Matches Dashboard.css */
