@@ -5,7 +5,6 @@ import "./LandingPage.css";
 export default function LandingPage() {
   const [menuOpen, setMenuOpen] = useState(false);
   const navigate = useNavigate();
-
   const handleNavigateLogin = () => {
     navigate("/login");
   };
