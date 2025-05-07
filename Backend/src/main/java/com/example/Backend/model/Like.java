@@ -2,6 +2,7 @@ package com.example.Backend.model;
 
 import java.util.Date;
 
+
 public class Like {
     private String userId;
     private Date createdAt;
@@ -30,4 +31,5 @@ public class Like {
     public void setCreatedAt(java.util.Date createdAt) {
         this.createdAt = (Date) createdAt;
     }
+    
 }
