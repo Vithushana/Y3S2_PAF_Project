@@ -11,7 +11,6 @@ import {
   ArrowLeft,
 } from "lucide-react"; // Added ArrowLeft
 import "./ProfilePage.css";
-
 const ProfilePage = () => {
   const [activeTab, setActiveTab] = useState("posts");
   const [userPosts, setUserPosts] = useState([]);

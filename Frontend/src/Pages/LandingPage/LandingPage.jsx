@@ -1,15 +1,12 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./LandingPage.css";
-
 export default function LandingPage() {
   const [menuOpen, setMenuOpen] = useState(false);
   const navigate = useNavigate();
-
   const handleNavigateLogin = () => {
     navigate("/login");
   };
-
   return (
     <div className="landing-page">
       {/* Navbar */}
