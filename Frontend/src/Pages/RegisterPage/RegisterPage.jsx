@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+
 export default function RegisterPage({ onNavigateToLogin }) {
   const navigate = useNavigate();
 
@@ -13,6 +14,7 @@ export default function RegisterPage({ onNavigateToLogin }) {
     confirmPassword: "",
   });
 
+  
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevState) => ({
@@ -41,6 +43,7 @@ export default function RegisterPage({ onNavigateToLogin }) {
         }),
       });
 
+      
       const result = await response.text();
 
       alert(result);
@@ -54,6 +57,7 @@ export default function RegisterPage({ onNavigateToLogin }) {
     }
   };
 
+  
   return (
     <div className="register-page">
       <div className="register-container">
