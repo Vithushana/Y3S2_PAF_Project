@@ -1,5 +1,4 @@
 package com.example.Backend.controller;
-
 import com.example.Backend.model.Notification;
 import com.example.Backend.service.NotificationService;
 import org.springframework.beans.factory.annotation.Autowired;
